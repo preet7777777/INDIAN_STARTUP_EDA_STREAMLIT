@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(layout='wide',page_title='StartUp Analysis')
 
-df = pd.read_csv('C:\INDIAN_STARTUP_EDA_STREAMLIT\startup_cleaned (1).csv')
+df = pd.read_csv('C:\INDIAN_STARTUP_EDA_STREAMLIT\startup_cleaned.csv')
 df['date'] = pd.to_datetime(df['date'],errors='coerce')
 df['month'] = df['date'].dt.month
 df['year'] = df['date'].dt.year
