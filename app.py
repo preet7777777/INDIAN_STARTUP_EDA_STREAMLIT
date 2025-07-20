@@ -4,7 +4,16 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(layout='wide',page_title='StartUp Analysis')
 
-df = pd.read_csv('C:\INDIAN_STARTUP_EDA_STREAMLIT\startup_cleaned.csv')
+# df = pd.read_csv('C:\INDIAN_STARTUP_EDA_STREAMLIT\startup_cleaned.csv')
+import pandas as pd
+import os
+
+# Debug print — optional, can be removed later
+print("Current directory:", os.getcwd())
+print("Files in current directory:", os.listdir())
+
+# ✅ Make sure 'startup_cleaned.csv' is in the SAME folder as this script
+df = pd.read_csv('startup_cleaned.csv')
 df['date'] = pd.to_datetime(df['date'],errors='coerce')
 df['month'] = df['date'].dt.month
 df['year'] = df['date'].dt.year
